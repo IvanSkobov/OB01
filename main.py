@@ -26,3 +26,14 @@ class Warior(object):
         print(f"Защита: {self.defense}")
         print(f"Скорость: {self.speed}")
         print("\n")
+
+
+war1 = Warior("Ivan", 100, 10, 10, 10)
+war2 = Warior("Vasya", 100, 5, 15, 10)
+
+print(war1.info())
+war1.sleep()
+
+print(war1.info())
+print(war2.info())
+
