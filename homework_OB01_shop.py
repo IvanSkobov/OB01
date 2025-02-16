@@ -4,36 +4,35 @@ class Store:
         self.address = address  # Адрес магазина
         self.items = {}  # Словарь для хранения товаров и их цен
 
-    def add_item(self, item_name, price):
-        """Добавляет товар в ассортимент."""
-        self.items[item_name] = price
+    def add_item(self, item_name, price): #Метод
+
+        self.items[item_name] = price # Добавляем товар в магазин
         print(f"Товар '{item_name}' добавлен в магазин '{self.name}'.")
 
-    def remove_item(self, item_name):
-        """Удаляет товар из ассортимента."""
-        if item_name in self.items:
+    def remove_item(self, item_name): #Метод
+
+        if item_name in self.items: # Если товар есть в магазине
             del self.items[item_name]
             print(f"Товар '{item_name}' удален из магазина '{self.name}'.")
         else:
             print(f"Товар '{item_name}' отсутствует в магазине '{self.name}'.")
 
-    def get_item_price(self, item_name):
-        """Возвращает цену товара по его названию."""
-        return self.items.get(item_name, None)
+    def get_item_price(self, item_name): #Метод
 
-    def update_item_price(self, item_name, new_price):
-        """Обновляет цену товара."""
-        if item_name in self.items:
+        return self.items.get(item_name, None) # Возвращаем цену товара
+
+    def update_item_price(self, item_name, new_price): #Метод
+
+        if item_name in self.items: # Если товар есть в магазине
             self.items[item_name] = new_price
             print(f"Цена товара '{item_name}' обновлена в магазине '{self.name}'.")
         else:
             print(f"Товар '{item_name}' отсутствует в магазине '{self.name}'.")
 
-    def __str__(self):
-        """Возвращает строковое представление магазина."""
+    def __str__(self): #Метод
         return (f"Магазин: {self.name}\n"
-                f"Адрес: {self.address}\n"
-                f"Ассортимент: {self.items}")
+        f"Адрес: {self.address}\n"
+        f"Ассортимент: {self.items}")
 
 
 # Создаем несколько магазинов
