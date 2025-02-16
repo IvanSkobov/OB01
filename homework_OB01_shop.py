@@ -37,25 +37,25 @@ class Store:
 
 
 # Создаем несколько магазинов
-store1 = Store("Фруктовый рай", "ул. Пушкина, д. 10")
-store2 = Store("Овощной дворик", "пр. Ленина, д. 25")
-store3 = Store("Молочная ферма", "ул. Гагарина, д. 7")
+store1 = Store("Фруктовый сад", "ул. Самарская, д. 21")
+store2 = Store("Овощной дворик", "пр. Московская, д. 13")
+store3 = Store("Молочный фермер", "ул. Уральская, д. 1")
 
 # Добавляем товары в магазины
-store1.add_item("яблоки", 0.5)
-store1.add_item("бананы", 0.75)
-store1.add_item("апельсины", 0.8)
+store1.add_item("яблоки", 150,)
+store1.add_item("бананы", 100)
+store1.add_item("апельсины", 180)
 
-store2.add_item("картофель", 0.3)
-store2.add_item("морковь", 0.4)
-store2.add_item("лук", 0.2)
+store2.add_item("картофель", 30)
+store2.add_item("морковь", 25)
+store2.add_item("лук", 20)
 
-store3.add_item("молоко", 1.2)
-store3.add_item("сыр", 2.5)
-store3.add_item("йогурт", 1.0)
+store3.add_item("молоко", 120)
+store3.add_item("сыр", 250)
+store3.add_item("йогурт", 100)
 
 # Обновляем цену товара
-store1.update_item_price("яблоки", 0.6)
+store1.update_item_price("яблоки", 130)
 
 # Удаляем товар
 store2.remove_item("лук")
@@ -63,6 +63,34 @@ store2.remove_item("лук")
 # Получаем цену товара
 price = store3.get_item_price("сыр")
 print(f"Цена сыра в магазине '{store3.name}': {price}")
+
+# Выводим информацию о магазинах
+print("\nИнформация о магазинах:")
+print(store1)
+print(store2)
+print(store3)
+
+# Выберем магазин "Фруктовый рай"
+store = store1
+
+# 1. Добавим новый товар
+store.add_item("груши", 190)
+print(store)  # Выведем информацию о магазине после добавления
+
+# 2. Обновим цену товара
+store.update_item_price("бананы", 95)
+print(store)  # Выведем информацию о магазине после обновления цены
+
+# 3. Удалим товар
+store.remove_item("апельсины")
+print(store)  # Выведем информацию о магазине после удаления
+
+# 4. Запросим цену товара
+price = store.get_item_price("груши")
+print(f"Цена груш: {price}")
+
+price = store.get_item_price("апельсины")  # Товар удален, должен вернуть None
+print(f"Цена апельсинов: {price}")
 
 # Выводим информацию о магазинах
 print("\nИнформация о магазинах:")
