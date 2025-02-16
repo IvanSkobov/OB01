@@ -32,7 +32,14 @@ war1 = Warior("Ivan", 100, 10, 10, 10)
 war2 = Warior("Vasya", 100, 5, 15, 10)
 
 print(war1.info())
+print(war2.info())
 war1.sleep()
+war1.eat()
+war1.hit(war2)
+
+war2.sleep()
+war2.eat()
+war2.hit(war1)
 
 print(war1.info())
 print(war2.info())
